@@ -274,8 +274,14 @@ void classic6dofInvKine(Kine6d* pose_, float* q_last_, Kine6dSol* q_)
 			}
 		} else {
 			atan_a = atan2f(L1_sw[1], L1_sw[0]);
-			acos_a = acosf( 0.5f*(l_se_2 + l_sw_2 - l_ew_2) / (l_se*l_sw) );
-			acos_e = acosf( 0.5f*(l_se_2 + l_ew_2 - l_sw_2) / (l_se*l_ew) );
+			acos_a = 0.5f*(l_se_2 + l_sw_2 - l_ew_2) / (l_se*l_sw);
+			if	(acos_a >=  1.0f) acos_a = 0.0f;
+			else if	(acos_a <= -1.0f) acos_a = (float)M_PI;
+			else	acos_a = acosf(acos_a);
+			acos_e = 0.5f*(l_se_2 + l_ew_2 - l_sw_2) / (l_se*l_ew);
+			if	(acos_e >=  1.0f) acos_e = 0.0f;
+			else if	(acos_e <= -1.0f) acos_e = (float)M_PI;
+			else	acos_e = acosf(acos_e);
 			if (0 == ind_arm) { // right arm
 				// above elbow
 				qa[0][0] = atan_a - acos_a + (float)M_PI_2;
