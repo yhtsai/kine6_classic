@@ -1,7 +1,7 @@
-project(kine_classic_6dof)
+project(kine6_classic)
 
-add_executable(kine_classic_6dof main.c Classic6dofKine.c)
+add_executable(kine6_classic main.c Classic6dofKine.c)
 
-target_link_libraries(kine_classic_6dof m)
+target_link_libraries(kine6_classic m)
 
-install(TARGETS kine_classic_6dof RUNTIME DESTINATION bin)
+#install(TARGETS kine6_classic RUNTIME DESTINATION bin) #kdevelop
