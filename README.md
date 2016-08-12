@@ -1,2 +1,2 @@
 # kine6_classic
-forward and inverse kinematics of classic 6 dof robot arm
+forward and inverse kinematics (geometry approach) of classic 6 dof robot arm
