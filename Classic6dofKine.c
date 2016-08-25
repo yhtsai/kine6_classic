@@ -407,4 +407,5 @@ void classic6dofInvKine(Kine6d* pose_, float* q_last_, Kine6dSol* q_)
 			} // for ind_wrist
 		} // for ind_elbow
 	} // for ind_arm
+	
 }
